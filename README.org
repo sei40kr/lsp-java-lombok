@@ -1,0 +1,25 @@
+#+TITLE: lsp-java-lombok
+
+Lombok support for [[https://github.com/emacs-lsp/lsp-java][lsp-java]].
+
+* Requirements
+- Emacs 26 or higher
+- [[https://github.com/emacs-lsp/lsp-java][lsp-java]]
+
+* Install
+Call =lsp-java-lombok= as soon as you load =lsp-java=. It will modify
+=lsp-java-vm-args= to load the Lombok JAR.
+
+#+BEGIN_SRC emacs-lisp
+(with-eval-after-load 'lsp-java
+  (lsp-java-lombok))
+#+END_SRC
+
+* Commands
+** =lsp-java-lombok-download=
+Download the latest Lombok JAR to =lsp-java-lombok-jar-path=. (see Customization for details)
+
+* Customization
+| Variable                   | Default value                  | Description                                                                                          |
+|----------------------------+--------------------------------+------------------------------------------------------------------------------------------------------|
+| =lsp-java-lombok-jar-path= | =~/.emacs.d/.cache/lombok.jar= | The location of the Lombok JAR. When you download the latest Lombok JAR, it will be also saved here. |
